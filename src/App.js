@@ -1,16 +1,10 @@
 import React from 'react'
 import WeatherMain from './WeatherMain'
-
-
-
+import './index.css'
 function App(){
  
   return(
-  <div>
       <WeatherMain/>
-  </div>
-
-  
   )
 }
 export default App;

@@ -23,6 +23,11 @@ form{
     margin-bottom:10px;
     align-self: center;
 }
+input:hover,
+input:focus{
+    box-shadow: 0px 0px 15px 0px black;
+    outline:none;
+}
 button{
     font-weight: 700;
     letter-spacing: 2px;
@@ -71,11 +76,13 @@ form>button,
     color:white;
     font-weight: 700;
     padding:20px 0px;
+
 }
 .nextWeather{
     border:1px royalblue solid;
     background-image: linear-gradient(white, royalblue);
     padding:10px;
+    box-shadow: 5px 5px 5px black;
 }
 .nextWeather>img{
     width:100%;
@@ -99,6 +106,9 @@ form>button,
         border: none;
         border:1px solid black;
         margin-left:5px;
+    }
+    .container{
+        box-shadow:5px 20px 50px black;
     }
 
 }

@@ -14,7 +14,7 @@ function ContextProvider(props){
         const latitude = position.coords.latitude
         const longitude = position.coords.longitude
       
-      fetch(`http://api.weatherapi.com/v1/forecast.json?key=56411f6296174712af881712212508&q=${latitude},${longitude}&days=3&aqi=no&alerts=no`)
+      fetch(`https://api.weatherapi.com/v1/forecast.json?key=56411f6296174712af881712212508&q=${latitude},${longitude}&days=3&aqi=no&alerts=no`)
       .then(response=>response.json())
       .then(data=>setWeather(
   
@@ -23,7 +23,7 @@ function ContextProvider(props){
         <div className='currentWeatherInfo'>
         <p>{data.location.name}, {data.location.country} </p>
         <img src={data.current.condition.icon} alt={data.current.condition.text}/>
-        <p>{data.current.condition.text}, {data.current.temp_c}°C</p>
+        <p>{data.current.condition.text}, {Math.round(data.current.temp_c)}°C</p>
         </div>
   
         <div className='nextWetherContainer'>
@@ -43,7 +43,7 @@ function ContextProvider(props){
     function handleSubmit(e){
       e.preventDefault();
       if(query!==""){
-      fetch((`http://api.weatherapi.com/v1/forecast.json?key=56411f6296174712af881712212508&q=${query}&days=3&aqi=no&alerts=no`))
+      fetch((`https://api.weatherapi.com/v1/forecast.json?key=56411f6296174712af881712212508&q=${query}&days=3&aqi=no&alerts=no`))
       .then(response=>response.json())
       .then(data=>setWeather(
         <div className='weatherContainer'>
@@ -51,7 +51,7 @@ function ContextProvider(props){
         <div className='currentWeatherInfo'>
         <p>{data.location.name}, {data.location.country} </p>
         <img src={data.current.condition.icon} alt={data.current.condition.text}/>
-        <p>{data.current.condition.text}, {data.current.temp_c}°C</p>
+        <p>{data.current.condition.text}, {Math.round(data.current.temp_c)}°C</p>
         </div>
   
         <div className='nextWetherContainer'>
